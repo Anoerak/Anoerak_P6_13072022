@@ -1,14 +1,60 @@
-#contact_modal {
-    display: none;
-}
-
+/* Header */
 .photograph-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    padding: 30px;
 }
 
-.contact_button {
+.photograph-header :nth-child(1) {
+    order: 2;
+}
+.photograph-header :nth-child(1) {
+    order: 1;
+}
+.photograph-header :nth-child(3) {
+    order: 3;
+}
+
+
+
+.photograph-header .photographer_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 60%;
+}
+.photograph-header .photographer_info>* {
+    margin: 0;
+}
+.photograph-header .photographer_info :nth-child(1) {
+    order: 1;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 83px;
+    color: #D3573C
+}
+.photograph-header .photographer_info :nth-child(2) {
+    order: 2;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #901C1C;
+}
+.photograph-header .photographer_info :nth-child(3) {
+    order: 3;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #525252;
+}
+
+
+.photograph-header .contact_button, #contact_modal .modal form .contact_button, #main #gallery .order_bar nav button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -19,6 +65,100 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Gallery */
+#main #gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 100px;
+}
+
+#main #gallery .order_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#main #gallery .order_bar p {
+    width: 74px;
+    height: 23px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+}
+
+/* Dropdown Order Gallery */
+
+
+
+
+/* Medias Gallery */
+#main #gallery .medias_gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 2.46rem;
+}
+
+#main #gallery .medias_gallery .card img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#main #gallery .medias_gallery .card .card_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #901C1C;
+}
+
+#main #gallery .medias_gallery .card .card_info h3 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+#main #gallery .medias_gallery .card .card_info span {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+#main #gallery .medias_gallery .card .card_info span i {
+    width: 21px;
+    height: 24px;
+}
+
+/* Modal Style */
+#contact_modal {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background: rgb(229, 229, 229, 0.5);
+    margin: auto;
 }
 
 .modal {
