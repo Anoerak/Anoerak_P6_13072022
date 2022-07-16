@@ -110,14 +110,29 @@
 #main #gallery .medias_gallery {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
     margin: 0;
     gap: 2.46rem;
 }
 
-#main #gallery .medias_gallery .card img {
+#main #gallery .medias_gallery .card video .fa-circle-play {
+    position: relative;
+}
+#main #gallery .medias_gallery .card video .fa-circle-play::after {
+    content: "";
+    position: absolute;
+    top: -8rem;
+    left: 11rem;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+#main #gallery .medias_gallery .card img, #main #gallery .medias_gallery .card video {
     width: 350px;
     height: 300px;
     object-fit: cover;
@@ -125,9 +140,14 @@
     cursor: pointer;
 }
 
+#main #gallery .medias_gallery .card video {
+    filter: contrast(0.5);
+}
+
 #main #gallery .medias_gallery .card .card_info {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    max-width: 350px;
     justify-content: space-between;
     color: #901C1C;
 }
@@ -139,15 +159,100 @@
 }
 
 #main #gallery .medias_gallery .card .card_info span {
+    display: flex;
     font-weight: 500;
     font-size: 24px;
     line-height: 31px;
 }
 
-#main #gallery .medias_gallery .card .card_info span i {
+#main #gallery .medias_gallery .card .card_info span p {
+    margin: 0;
+}
+
+#main #gallery .medias_gallery .card .card_info span .fa_custom {
+    animation: heart2 0.35s ease-in;
+    cursor: pointer;
+    margin-left: 10px;
     width: 21px;
     height: 24px;
+    line-height: 29px;
 }
+
+#main #gallery .medias_gallery .card .card_info span .fa_full.fa_full_animation {
+    animation: heart 0.35s ease-in;
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+    z-index: 5;
+    margin-left: 10px;
+    width: 21px;
+    height: 24px;
+    line-height: 29px;
+}
+
+@keyframes heart{
+    0%{
+        transform: scaleY(0);
+        transform-origin: bottom center;
+        opacity: 0;
+    }
+    100%{
+        transform: scaleY(1);
+        transform-origin: bottom center;
+        opacity: 1;
+    }
+}
+@keyframes heart2{
+    0%{
+        transform: scaleY(0);
+        transform-origin: left;
+        opacity: 0;
+    }
+    100%{
+        transform: scaleY(1);
+        transform-origin: left;
+        opacity: 1;
+    }
+}
+
+#main #gallery .medias_gallery .floating_bar {
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    width: 379px;
+    height: 89px;
+    background-color: #DB8876;
+}
+
+#main #gallery .medias_gallery .floating_bar #like_total {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 170px;
+    height: 69px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: right;
+}
+#main #gallery .medias_gallery .floating_bar #like_total p, #main #gallery .medias_gallery .floating_bar #like_total i {
+    margin-left: 1rem;
+}
+
+#main #gallery .medias_gallery .floating_bar #rate {
+    width: 170px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+}
+
+
 
 /* Modal Style */
 #contact_modal {
