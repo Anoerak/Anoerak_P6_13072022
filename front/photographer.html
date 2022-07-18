@@ -23,24 +23,28 @@
 	<div id="contact_modal">
 		<div class="modal">
 			<header>
-				<h2>Contactez-moi</h2>
-				<img src="assets/icons/close.svg" onclick="closeModal()" />
+				<div class="message">
+					<h2>Contactez-moi</h2>
+					<img src="assets/icons/close.svg" onclick="closeModal()" />
+				</div>
+				<span class="artist_name"></span>
 			</header>
 			<form>
 				<div>
 					<label>Prénom</label>
-					<input />
+					<input id="firstname" />
 					<label>Nom</label>
-					<input />
+					<input id="name" />
 					<label>Email</label>
-					<input />
-					<label for="message">Message</label>
+					<input id="email" />
+					<label for="message">Votre message</label>
 					<textarea id="message"></textarea>
 				</div>
-				<button class="contact_button">Envoyer</button>
+				<button id="send_message" class="contact_button">Envoyer</button>
 			</form>
 		</div>
 	</div>
+	<footer></footer>
 	<script src="scripts/factories/medias.js"></script>
 	<script src="scripts/pages/photographer.js"></script>
 	<script src="scripts/utils/contactForm.js"></script>

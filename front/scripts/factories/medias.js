@@ -1,31 +1,31 @@
     function createTemplate () {
         const orderBar = document.createElement("div");
-        orderBar.setAttribute("class", "order_bar");
+        orderBar.setAttribute("class", "sort_bar");
         orderBar.innerHTML = `
-            <p>Trier par </p>
-            <nav class="dropdown">
-                <ul>Popularité <i class="fa-solid fa-angle-up"></i>
-                    <li>Date</li>
-                    <li>Likes</li>
-                </ul>
-            </nav>
+            <label>Trier par
+                <select name="filter" id="filter">
+                    <option value="0" selected>Popularité</option>
+                    <option value="1" >Date</option>
+                    <option value="2">Titre</option>
+                </select>                                                    
+            </label>
         `;        
-        const mediasGallery = document.createElement("div");
+        const mediasGallery = document.createElement("article");
         mediasGallery.setAttribute("class", "medias_gallery");
-        mediasGallery.innerHTML = `
-        <div class="floating_bar">
+        const rate = document.createElement("div");
+        rate.setAttribute("class", "floating_bar");
+        rate.innerHTML = `
             <div id="like_total">
-            <p id="like_amount">0</p>
-            <i class="fas fa-heart fa_full fa_full_animation"></i>
+                <p id="like_amount">0</p>
+                <i class="fas fa-heart fa_full fa_full_animation"></i>
             </div>
             <div id="rate">
             </div>
-        </div>
-            `;
-
+        `;
 
         gallery.appendChild(orderBar);
         gallery.appendChild(mediasGallery);
+        gallery.appendChild(rate);
     }
 
     function loadImages (array, parent) {
@@ -63,6 +63,63 @@
         parent.appendChild(card);   
     }
 
+    function displayHeader (data) {
+        const photographersId = window.location.href.substring(window.location.href.indexOf("=") + 1);
+        const photographer = data.photographers.find(photographer => photographer.id == photographersId);
+
+        const photograhHeader = document.querySelector(".photograph-header");
+        const photographerInfo = document.createElement("div");
+        photographerInfo.setAttribute("aria-label", "Informations sur le photographe");
+        photographerInfo.setAttribute("class", "photographer_info");
+        photographerInfo.innerHTML = `
+            <h2>${photographer.name}</h2>
+            <h3>${photographer.city}, ${photographer.country}</h3>
+            <p>${photographer.tagline}</p>
+        `;
+        const photographerProfilPicture = document.createElement("img", photographer.name);
+        photographerProfilPicture.setAttribute("src", "../front/assets/photographers/"+photographer.portrait);
+
+        photograhHeader.appendChild(photographerInfo);
+        photograhHeader.appendChild(photographerProfilPicture);
+    }
+
+    function displayMedias (array, parent) {
+        array.sort((a, b) => b.likes - a.likes);
+        for (let j = 0; j < array.length; j++) {
+            if (array[j].video === undefined) {
+                loadImages(array[j], parent);
+            } else {
+                loadVideos(array[j], parent);
+            };
+        };
+    }
+
+    function displayGallery(data) {
+        const photographersId = window.location.href.substring(window.location.href.indexOf("=") + 1);
+
+        createTemplate();
+        displayRate(data,photographersId);
+        displayNameModal(data,photographersId);
+
+        let mediasGallery = document.querySelector(".medias_gallery");
+        let medias = [];
+        for (let i = 0; i < data.media.length; i++) {
+            if (data.media[i].photographerId == photographersId) {
+                medias.push(data.media[i]);
+            };
+        }
+
+        displayMedias(medias, mediasGallery);
+        orderBy(medias, mediasGallery);
+    }
+
+    function displayRate (x,id) {
+        const photographer = x.photographers.find(photographer => photographer.id == id);
+        document.getElementById("rate").innerHTML = `
+            ${photographer.price}€ / jour
+        `;
+    }
+
     function totalLikes () {
         const hearts = document.querySelectorAll(".art_likes");
         let total = 0;
@@ -97,3 +154,27 @@
             });
         });
     }
+
+    function orderBy (array, parent) {
+        const filter = document.querySelector("#filter");
+        filter.addEventListener("change", function () {
+            if (filter.value == 0) {
+                array.sort((a, b) => a.likes - b.likes);
+            } else if (filter.value == 1) {
+                array.sort((a, b) => new Date(b.date) - new Date(a.date));
+            } else if (filter.value == 2) {
+                array.sort((a, b) => a.title.localeCompare(b.title));
+            }
+            parent.innerHTML = "";
+            array.forEach(element => {
+                if (element.video === undefined) {
+                    loadImages(element, parent);
+                } else {
+                    loadVideos(element, parent);
+                }
+            });
+            totalLikes();
+            likeHearts();
+        });
+    }
+

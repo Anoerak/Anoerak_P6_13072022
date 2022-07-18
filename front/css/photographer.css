@@ -54,7 +54,7 @@
 }
 
 
-.photograph-header .contact_button, #contact_modal .modal form .contact_button, #main #gallery .order_bar nav button {
+.photograph-header .contact_button, #contact_modal .modal form .contact_button, #main #gallery .sort_bar nav button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -84,15 +84,17 @@
     margin: 0 100px;
 }
 
-#main #gallery .order_bar {
+#main #gallery .sort_bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    width: 100%;
+    margin: 1rem 0;
 }
 
-#main #gallery .order_bar p {
+#main #gallery .sort_bar p {
     width: 74px;
     height: 23px;
     font-weight: 700;
@@ -103,7 +105,30 @@
 
 /* Dropdown Order Gallery */
 
+#main #gallery .sort_bar label {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+}
 
+#main #gallery .sort_bar label select {
+    width: 170px;
+    height: 69px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+#main #gallery .sort_bar label select option {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 700;
+    color: white;
+    margin: 23px 20px;
+}
 
 
 /* Medias Gallery */
@@ -215,7 +240,7 @@
     }
 }
 
-#main #gallery .medias_gallery .floating_bar {
+#main #gallery .floating_bar {
     z-index: 10;
     display: flex;
     flex-direction: row;
@@ -229,7 +254,7 @@
     background-color: #DB8876;
 }
 
-#main #gallery .medias_gallery .floating_bar #like_total {
+#main #gallery .floating_bar #like_total {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -240,11 +265,11 @@
     line-height: 31px;
     text-align: right;
 }
-#main #gallery .medias_gallery .floating_bar #like_total p, #main #gallery .medias_gallery .floating_bar #like_total i {
+#main #gallery .floating_bar #like_total p, #main #gallery .floating_bar #like_total i {
     margin-left: 1rem;
 }
 
-#main #gallery .medias_gallery .floating_bar #rate {
+#main #gallery .floating_bar #rate {
     width: 170px;
     font-weight: 500;
     font-size: 24px;
@@ -259,53 +284,78 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     background: rgb(229, 229, 229, 0.5);
     margin: auto;
 }
 
-.modal {
+#contact_modal .modal {
+    z-index: 10;
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+    width: 40%;
+    height: 80%;
+    padding: 0px 30px 75px 30px;
+    margin: 3% 30%;
+    filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
-.modal header {
+#contact_modal .modal header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 4.75rem;
+}
+#contact_modal .modal header .message {
+    height: 84px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    flex-direction: row;
     width: 100%;
 }
 
-.modal header img {
+#contact_modal .modal header .message img {
     cursor: pointer;
 }
 
-.modal header h2 {
+#contact_modal .modal header .message h2 {
     font-size: 64px;
-    font-weight: normal;
+    font-weight: 400;
+    line-height: 83px;
     text-align: center;
 }
 
-form {
+#contact_modal .modal header .artist_name {
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    line-height: 83px;
+}
+
+#contact_modal .modal form {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
 }
 
-form label {
+#contact_modal .modal form label {
     color: #312E2E;
     font-size: 36px;
+    font-weight: 400;
+    line-height: 47px;
 }
 
-form div {
+#contact_modal .modal form div {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -313,9 +363,22 @@ form div {
     margin-bottom: 26px;
 }
 
-form input {
+#contact_modal .modal form input {
     width: 100%;
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+#contact_modal .modal form textarea {
+    width: 100%;
+    height: 170px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+
+footer {
+    min-height: 6rem;
 }
