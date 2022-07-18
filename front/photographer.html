@@ -19,8 +19,8 @@
 			<section id="gallery">
 			</section>
 		</main>
-	<div id="myLightbox" class="lightbox"></div>
-	<div id="contact_modal">
+		<div id="lightbox_gallery" class="container"></div>
+		<div id="contact_modal">
 		<div class="modal">
 			<header>
 				<div class="message">
@@ -29,7 +29,7 @@
 				</div>
 				<span class="artist_name"></span>
 			</header>
-			<form>
+			<form method="post" action="" onsubmit="return sendMessage()">
 				<div>
 					<label>Prénom</label>
 					<input id="firstname" />
@@ -40,13 +40,16 @@
 					<label for="message">Votre message</label>
 					<textarea id="message"></textarea>
 				</div>
-				<button id="send_message" class="contact_button">Envoyer</button>
+				<button class="contact_button" type="submit">Envoyer</button>
 			</form>
 		</div>
-	</div>
+		</div>
 	<footer></footer>
-	<script src="scripts/factories/medias.js"></script>
-	<script src="scripts/pages/photographer.js"></script>
+	<script src="scripts/models/MediasFactory.js"></script>
+	<script src="scripts/models/LikeFactory.js"></script>
+	<script src="scripts/controllers/display.js"></script>
+	<script src="scripts/vue/photographer.js"></script>
+	<script src="scripts/utils/lightbox.js"></script>
 	<script src="scripts/utils/contactForm.js"></script>
 	</body>
 </html>

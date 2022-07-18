@@ -27,8 +27,3 @@ function sendMessage () {
     console.log(data);
     return false;
 }
-
-document.getElementById("send_message").addEventListener("click", function () {
-    sendMessage();
-    return false;
-});

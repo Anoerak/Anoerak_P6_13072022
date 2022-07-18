@@ -8,7 +8,6 @@
     margin: 0 100px;
     padding: 30px;
 }
-
 .photograph-header :nth-child(1) {
     order: 2;
 }
@@ -18,9 +17,6 @@
 .photograph-header :nth-child(3) {
     order: 3;
 }
-
-
-
 .photograph-header .photographer_info {
     display: flex;
     flex-direction: column;

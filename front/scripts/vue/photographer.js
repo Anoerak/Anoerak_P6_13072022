@@ -17,13 +17,11 @@ if (page2 === "http://127.0.0.1:5501/front/photographer.html") {
         return { photographers };
     }
 
-
     async function init() {
         const { photographers } = await getPhotographersDatas();
         displayHeader(photographers);
         displayGallery(photographers);
-        totalLikes();
-        likeHearts();
+        getMediaId(photographers);
     };
 
     init();
