@@ -4,7 +4,8 @@ class MediaFactory {
         this.medias = [];
         this.photographersId = window.location.href.substring(window.location.href.indexOf("=") + 1);
     }
-
+    
+// Get the Photos/Videos of the Artist on Page Only
     addMedia(data) {
         for (let i = 0; i < data.media.length; i++) {
             if (data.media[i].photographerId == this.photographersId) {
@@ -14,6 +15,7 @@ class MediaFactory {
         return this.medias;
     }
 
+// Create the Card on the DOM for Pictures
     loadImages (media,parent) {
         const card = document.createElement("div");
         card.setAttribute("class", "card");
@@ -30,6 +32,7 @@ class MediaFactory {
         parent.appendChild(card);
     }
 
+// Create the Card on the DOM for Videos
     loadVideos (media, parent) {
         const card = document.createElement("div");
         card.setAttribute("class", "card");
@@ -49,6 +52,7 @@ class MediaFactory {
         parent.appendChild(card);   
     }
 
+// Display the Medias on the DOM and Order them by Likes (descending)
     displayMedias (parent) {
         this.medias.sort((a, b) => b.likes - a.likes);
         for (let j = 0; j < this.medias.length; j++) {
@@ -60,19 +64,19 @@ class MediaFactory {
         };
     };
 
+// Order the Medias by Likes, Date or Title by Clicking on the Dropdown Menu
     orderBy (parent) {
-        let array = this.medias;
         const filter = document.querySelector("#filter");
         filter.addEventListener("change", () => {
             if (filter.value == 0) {
-                array.sort((a, b) => b.likes - a.likes);
+                this.medias.sort((a, b) => b.likes - a.likes);
             } else if (filter.value == 1) {
-                array.sort((a, b) => new Date(b.date) - new Date(a.date));
+                this.medias.sort((a, b) => new Date(b.date) - new Date(a.date));
             } else if (filter.value == 2) {
-                array.sort((a, b) => a.title.localeCompare(b.title));
+                this.medias.sort((a, b) => a.title.localeCompare(b.title));
             }
             parent.innerHTML = "";
-            array.forEach(element => {
+            this.medias.forEach(element => {
                 if (element.video === undefined) {
                     this.loadImages(element, parent);
                 } else {
@@ -84,5 +88,4 @@ class MediaFactory {
             likeFactory.totalLikes();
         });
     };
-    
 }

@@ -1,28 +1,14 @@
-const page2 = window.location.protocol + '//' + location.host + location.pathname;
-
-//Mettre le code JavaScript lié à la page photographer.html
-
-if (page2 === "http://127.0.0.1:5501/front/photographer.html") {
-
+// Get the Data from the JSON File
     async function getPhotographersDatas() {
-        const photographers = await (
-            fetch("../front/data/photographers.json")
-            .then(response => response.json())
-            .then(data => {
-                return data;
-            }
-            )
-            .catch(error => console.log(error))
-        );
-        return { photographers };
+        let datasFactory = new DatasFactory();
+        let datas = datasFactory.getDatas("all");
+        return datas;
     }
 
+// Displays the Datas on the DOM
     async function init() {
-        const { photographers } = await getPhotographersDatas();
+        const photographers = await getPhotographersDatas();
         displayHeader(photographers);
         displayGallery(photographers);
-        getMediaId(photographers);
     };
-
     init();
-}

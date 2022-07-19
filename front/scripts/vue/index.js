@@ -1,38 +1,29 @@
-const page1 = window.location.protocol + '//' + location.host + location.pathname;
-
-
-if (page1 === "http://127.0.0.1:5501/front/index.html") {
-
+// Get the List of the Artists from the JSON File
     async function getPhotographers() {
-        const photographers = await (
-            fetch("../front/data/photographers.json")
-            .then(response => response.json())
-            .then(data => {
-                return data.photographers;
-            }
-            )
-            .catch(error => console.log(error))
-        );
-        return { photographers };
+        let datasFactory = new DatasFactory();
+        let datas = datasFactory.getDatas("artists");
+        return datas;
     }
 
+// Displays the Datas on the DOM
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
-
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerFactory(photographer);
+            
+        photographers.forEach((element) => {
+            const photographerModel = photographerFactory(element);
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
         });
     };
 
+// Initialize the Page
     async function init() {
-        const { photographers } = await getPhotographers();
+        const photographers = await getPhotographers();
         displayData(photographers);
     };
-    
     init();
 
+// Get the ID of the Artist and Pass the Data through the URL
     async function linkPage() {
         await getPhotographers();
         const photographerPageLink = document.querySelectorAll(".photographer_page_link");
@@ -44,6 +35,4 @@ if (page1 === "http://127.0.0.1:5501/front/index.html") {
             );
         }
     }
-    
     linkPage();
-}
