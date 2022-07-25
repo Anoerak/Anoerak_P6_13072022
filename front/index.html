@@ -3,7 +3,7 @@
 	<head>
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<meta charset="utf-8">
-		<link rel="icon" type="image/png" href="assets/favicon.png">
+		<link rel="icon" type="image/png" href="./assets/favicon.png">
 		<link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/89ed478db9.js" crossorigin="anonymous"></script>
 		<title>Fisheye</title>
@@ -16,8 +16,13 @@
 		<main id="main">
 			<div class="photographer_section"></div>
 		</main>
-		<script src="scripts/models/DataFactory.js"></script>
-		<script src="scripts/controllers/display.js"></script>
-		<script src="scripts/vue/index.js"></script>
+		<!-- API -->
+		<script src="./scripts/api/Api.js"></script>
+		<!-- Model -->
+		<script src="./scripts/models/PhotographersModel.js"></script>
+		<!-- View -->
+		<script src="./scripts/templates/PhotographersCardsTemplate.js"></script>
+		<!-- Init -->
+		<script src="./scripts/pages/index.js"></script>
 	</body>
 </html>

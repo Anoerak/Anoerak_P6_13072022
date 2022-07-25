@@ -1,0 +1,43 @@
+modal.innerHTML = `
+<div class="lightbox_container">
+    <div class="lightbox_content">
+        <button class="previous">&#10094;</button>
+        <div class="lightbox_img_container">
+            <div class="lightbox_img">
+                <img src="${lightbox[i].firstElementChild.src}" alt="${lightbox[i].firstElementChild.alt}">
+            </div>
+            <div class="lightbox_caption">
+                <h3>${lightbox[i].firstElementChild.alt}</h3>
+            </div>
+        </div>
+        <div class="lightbox_close">
+            <i class="fas fa-times"></i>
+        </div>
+        <button class="next">&#10095;</button>
+    </div>
+</div>
+`;
+} else {
+modal.innerHTML = `
+<div class="lightbox_container">
+    <div class="lightbox_content">
+        <button class="previous">&#10094;</button>
+        <div class="lightbox_video_container">
+            <video controls class="lightbox_video">
+                <source src="${lightbox[i].firstElementChild.src}" type="video/mp4">
+            </video>
+            <div class="lightbox_caption">
+                <h3>${lightbox[i].firstElementChild.ariaHidden}</h3>
+            </div>
+        </div>
+        <div class="lightbox_close">
+            <i class="fas fa-times"></i>
+        </div>
+        <button class="next">&#10095;</button>
+    </div>
+</div>
+`;
+}
+modal.classList.add("active");
+modal.style.display = "block";
+closeLightbox();

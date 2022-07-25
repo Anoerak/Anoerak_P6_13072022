@@ -8,15 +8,7 @@
     margin: 0 100px;
     padding: 30px;
 }
-.photograph-header :nth-child(1) {
-    order: 2;
-}
-.photograph-header :nth-child(1) {
-    order: 1;
-}
-.photograph-header :nth-child(3) {
-    order: 3;
-}
+
 .photograph-header .photographer_info {
     display: flex;
     flex-direction: column;
@@ -88,6 +80,7 @@
     margin-bottom: 20px;
     width: 100%;
     margin: 1rem 0;
+    height: 5em;
 }
 
 #main #gallery .sort_bar p {
@@ -107,23 +100,58 @@
     line-height: 23px;
 }
 
-#main #gallery .sort_bar label select {
-    width: 170px;
-    height: 69px;
-    border: none;
+#main #gallery .sort_bar label ul {
+    position: absolute;
+    z-index: 10;
+    overflow-x: hidden;
+    white-space: nowrap;
+    display: inline-table;
     background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    text-align: center;
+    width: 10em;
+    max-height: 10em;
+    border-radius: 0.3em;
+    align-items: flex-start;
+    padding: 0.5em;
+    margin: -1.5em 0 0 1em;
 }
 
-#main #gallery .sort_bar label select option {
-    font-size: 18px;
-    line-height: 23px;
-    font-weight: 700;
+#main #gallery .sort_bar label ul:hover {
+    cursor: pointer;
+}
+
+#main #gallery .sort_bar label ul:hover > .hidden {
+    display: block;
+}
+
+#main #gallery .sort_bar label li {
+    list-style: none;
     color: white;
-    margin: 23px 20px;
+    border-top: solid 1px white;
+    padding: 1em 0;
+    width: 100%;
+    font-size: 1.01em;
+}
+
+#main #gallery .sort_bar label li:hover {
+    background-color: #D3573C;
+}
+
+#main #gallery .sort_bar label li { 
+    text-indent: 10px;
+}
+
+#main #gallery .sort_bar label .hidden {
+    display: none;
+}
+
+#main #gallery .sort_bar label .choice1 {
+    display: flex;
+    justify-content: space-between;
+    border-top: none;
+}
+
+#main #gallery .sort_bar label .choice1 i {
+    margin-right: 1em;
 }
 
 
@@ -298,7 +326,7 @@
     width: 40%;
     height: 80%;
     padding: 0px 30px 75px 30px;
-    margin: 3% 30%;
+    margin: 3% 25%;
     filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
     /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); */
 }
@@ -364,6 +392,10 @@
     height: 68px;
     border: none;
     border-radius: 5px;
+    color: #312E2E;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 47px;
 }
 
 #contact_modal .modal form textarea {
@@ -371,6 +403,10 @@
     height: 170px;
     border: none;
     border-radius: 5px;
+    color: #312E2E;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 47px;
 }
 
 /* Footer */
