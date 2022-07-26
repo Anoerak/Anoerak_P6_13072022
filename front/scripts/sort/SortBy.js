@@ -44,10 +44,13 @@ class SortBy {
     displaySortedGallery() {
         this._sortedCollection = this.eventListener();
         this._sortedCollection.forEach(media => {
-            let mediasFactory = new MediasFactory(media, this.$mediasGallery);
+            let mediaIndex = this._sortedCollection.indexOf(media)+1;
+            let mediasFactory = new MediasFactory(media, this.$mediasGallery, mediaIndex);
             return mediasFactory;
         });
         const displayTotalLikes = new LikesCounter();
         displayTotalLikes.totalLikes();
+        const lightbox = new Lightbox(this._sortedCollection);
+        lightbox.openLightbox();
     }
 }

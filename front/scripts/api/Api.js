@@ -5,10 +5,6 @@ class Api {
         this._datas = {
             "photographers": [],
             "media": []
-            // "media": {
-            //     "images": [],
-            //     "videos": []
-            // },
         };
     }
 
@@ -30,12 +26,6 @@ class Api {
                         if (data.media[i].photographerId == id) {
                             this._datas.media.push(data.media[i]);
                         };
-                        // With Videos & Images in two Separate Arrays
-                        // if (data.media[i].photographerId == id && data.media[i].image !== undefined) {
-                        //     this.datas.media.images.push(data.media[i]);
-                        // } else if (data.media[i].photographerId == id && data.media[i].video !== undefined) {
-                        //     this.datas.media.videos.push(data.media[i]);
-                        // }
                     };
                     return this._datas
                 }

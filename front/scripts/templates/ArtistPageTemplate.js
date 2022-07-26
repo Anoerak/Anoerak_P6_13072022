@@ -14,8 +14,10 @@ class ArtistPageTemplate {
                 <h3>${this._data.city}, ${this._data.country}</h3>
                 <p>${this._data.tagline}</p>
             </div>
-            <button class="contact_button">Contactez-moi</button>
-            <img src="../front/assets/photographers/${this._data.portrait}" alt="${this._data.name}">
+            <div class="photographer_photo_contact">
+                <button class="contact_button">Contactez-moi</button>
+                <img src="../front/assets/photographers/${this._data.portrait}" alt="${this._data.name}">
+            </div>
         `;
     }
 
@@ -54,21 +56,6 @@ class ArtistPageTemplate {
         this.$galleryWrapper.appendChild(mediasGallery);
         this.$galleryWrapper.appendChild(rate);
     }
-
-    // Creates the Gallery
-    // displayGallery(collection) {
-    //     // With Videos & Images in two Separate Arrays
-    //     if (this._collection.images.length > 0) {
-    //         this._collection.images.forEach(media => {
-    //             this.loadImages(media, mediasGallery);
-    //         });
-    //     }
-    //     if (this._collection.videos.length > 0) {
-    //         this._collection.videos.forEach(media => {
-    //             this.loadVideos(media, mediasGallery);
-    //         });
-    //     }
-    // }
 
     render() {
         this.createTemplate();

@@ -41,6 +41,13 @@
     color: #525252;
 }
 
+.photograph-header .photographer_photo_contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+}
+
 
 .photograph-header .contact_button, #contact_modal .modal form .contact_button, #main #gallery .sort_bar nav button {
     font-size: 20px;
@@ -272,7 +279,7 @@
     align-items: center;
     position: fixed;
     bottom: 0;
-    right: 2rem;
+    right: 7%;
     width: 379px;
     height: 89px;
     background-color: #DB8876;

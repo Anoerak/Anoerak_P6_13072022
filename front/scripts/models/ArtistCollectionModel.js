@@ -54,15 +54,6 @@ class ArtistCollectionModel {
         }
         );
         return likes;
-        // let totalLikesImages = 0;
-        // let totalLikesVideos = 0;
-        // this.collection.images.forEach(media => {
-        //     totalLikesImages += media.likes;
-        // });
-        // this.collection.videos.forEach(media => {
-        //     totalLikesVideos += media.likes;
-        // })
-        // return totalLikesImages + totalLikesVideos;
     }
 
 }

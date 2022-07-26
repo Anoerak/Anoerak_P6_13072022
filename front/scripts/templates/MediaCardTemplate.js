@@ -31,11 +31,11 @@ class MediaCardTemplate {
     };
 
     // Create the Card on the DOM for Pictures
-    loadImages (media, parent) {
+    loadImages (media, parent, index) {
         this.$wrapper = document.createElement("div")
         this.$wrapper.classList.add("card");
         const card = `
-            <img id="${media.id}" class="medias_reader" src="../front/assets/images/${media.photographerId}/${media.image}" alt="${media.title}">
+            <img id="${index}" class="medias_reader" src="../front/assets/images/${media.photographerId}/${media.image}" alt="${media.title}">
             <div class="card_info">
                 <h3>${media.title}</h3>
                 <span>
@@ -50,11 +50,11 @@ class MediaCardTemplate {
     }
 
     // Create the Card on the DOM for Videos
-    loadVideos (media, parent) {
+    loadVideos (media, parent, index) {
         this.$wrapper = document.createElement("div")
         this.$wrapper.classList.add("card");
         const card  = `
-            <video id="${media.id}" class="mediasReader">
+            <video id="${index}" class="medias_reader">
                 <i class="fa-solid fa-circle-play"></i>
                 <source src="../front/assets/images/${media.photographerId}/${media.video}" type="video/mp4">
             </video>

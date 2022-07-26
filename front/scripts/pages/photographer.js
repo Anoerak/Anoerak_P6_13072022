@@ -21,11 +21,8 @@ class PhotographerPage {
         const Sorter = new SortBy(artistInfoAndCollection);
         Sorter.displaySortedGallery();
 
-        const contactForm = new FormModalTemplate(artistInfoAndCollection);
+        const contactForm = new ContactForm(artistInfoAndCollection);
         contactForm.render();
-
-        const lightbox = new LightboxTemplate(artistInfoAndCollection);
-        lightbox.render();
     }
 
     // Displays the Datas on the DOM
