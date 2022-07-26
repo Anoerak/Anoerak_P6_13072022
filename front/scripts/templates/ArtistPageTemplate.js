@@ -58,11 +58,11 @@ class ArtistPageTemplate {
         const rate = document.createElement("div");
         rate.setAttribute("class", "floating_bar");
         rate.innerHTML = `
-            <div id="like_total">
+            <div id="like_total" aria-label="Nombre de like pour l'ensemble de la collection de l'artiste">
                 <p id="like_amount"></p>
                 <i class="fas fa-heart fa_full fa_full_animation" aria-label="icone d'un coeur, non cliquable"></i>
             </div>
-            <div id="rate">${this._data.price}</div>
+            <div id="rate" aria-label="Tarif journalier de l'artiste">${this._data.price}</div>
         `;
 
         // Inserts Element in the DOM
