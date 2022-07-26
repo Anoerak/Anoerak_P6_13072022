@@ -3,6 +3,8 @@ class Lightbox {
         this._collection = data;
         this.$lightboxWrapper = document.querySelector("#lightbox_gallery");
         this._slideIndex = 1;
+        this.$mainHtmlWrapper = document.querySelector("main");
+        this.$headerWrapper = document.querySelector("header");
     }
     
     displayMedias(data) {
@@ -28,6 +30,9 @@ class Lightbox {
                 this.currentSlide(imgId)
                 this.previousSlide();
                 this.nextslide();
+                this.$headerWrapper.ariaHidden = "true";
+                this.$mainHtmlWrapper.ariaHidden = "true";
+                this.$lightboxWrapper.ariaHidden = "false";
                 this.$lightboxWrapper.style.display = "block";
                 this.closeLightbox();
             });
@@ -40,6 +45,19 @@ class Lightbox {
             this.$lightboxWrapper.style.display = "none";
             this.$lightboxWrapper.innerHTML = "";
             this.$lightboxWrapper.style.zIndex = "-10";
+            this.$headerWrapper.ariaHidden = "false";
+            this.$mainHtmlWrapper.ariaHidden = "false";
+            this.$lightboxWrapper.ariaHidden = "true";
+    });
+        window.addEventListener("keyup", (e) => {
+            if (e.keyCode === 27) {
+                this.$lightboxWrapper.style.display = "none";
+                this.$lightboxWrapper.innerHTML = "";
+                this.$lightboxWrapper.style.zIndex = "-10";
+                this.$headerWrapper.ariaHidden = "false";
+                this.$mainHtmlWrapper.ariaHidden = "false";
+                this.$lightboxWrapper.ariaHidden = "true";
+            }
         });
     }
 

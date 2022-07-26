@@ -25,8 +25,7 @@ class Index {
             photographerPageLink[i].addEventListener("click", function() {
                 const id = this.getAttribute("id");
                 window.location.href = "photographer.html?id="+id;
-            }
-            );
+            });
         }
     };
 

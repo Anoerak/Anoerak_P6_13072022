@@ -14,7 +14,7 @@ class PhotographersCardsTemplate {
             <div class="infos_photographer" aria-label="Informations sur le photographe">
                 <h2 aria-label="Nom du photographe">${this._photographer.name}</h2>
                 <h3 aria-label="Localisation du photographe">${this._photographer.city}, ${this._photographer.country}</h3>
-                <p aria-label="Punchline du photographe">${this._photographer.tagline}</p>
+                <p class="puchline" aria-label="Punchline du photographe">${this._photographer.tagline}</p>
                 <p class="rate" aria-label="Tarif du photographe">${this._photographer.price}</p>
             </div>
             `;

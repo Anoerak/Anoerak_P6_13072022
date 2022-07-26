@@ -10,8 +10,8 @@ class ArtistPageTemplate {
         this.$photograhHeaderWrapper = document.querySelector(".photograph-header");
         this.$photograhHeaderWrapper.innerHTML = `
             <div class="photographer_info" aria-label="Informations sur le photographe">
-                <h2>${this._data.name}</h2>
-                <h3>${this._data.city}, ${this._data.country}</h3>
+                <h1>${this._data.name}</h1>
+                <h2>${this._data.city}, ${this._data.country}</h2>
                 <p>${this._data.tagline}</p>
             </div>
             <div class="photographer_photo_contact">
@@ -28,13 +28,27 @@ class ArtistPageTemplate {
         orderBar.setAttribute("class", "sort_bar");
         orderBar.innerHTML = `
             <label>Trier par
-                <ul name="filter" id="filter">
+                <ul name="filter" id="filter" aria-label="Menu des filtres, cliquez sur 'm' pour afficher/masquer la liste des options">
                     <li class="choice1" value="0" selected>Popularité <i class="fa-solid fa-angle-down"></i></li>
                     <li class="choice2 hidden" value="1" >Date</li>
                     <li class="choice3 hidden" value="2">Titre</li>
                 </ul>                                                    
             </label>
         `;
+        let filter = orderBar.querySelectorAll(".hidden");
+        console.log(filter);
+        window.addEventListener("keypress", function(e) {
+            if (e.key === "m") {
+                filter.forEach(element => {
+                    console.log(element);
+                    if (element.classList.contains("hidden")) {
+                        element.classList.remove("hidden");
+                    } else {
+                        element.classList.add("hidden");
+                    }                    
+                });  
+            }
+        });
         
         // Creates the Gallery
         const mediasGallery = document.createElement("article");
@@ -46,7 +60,7 @@ class ArtistPageTemplate {
         rate.innerHTML = `
             <div id="like_total">
                 <p id="like_amount"></p>
-                <i class="fas fa-heart fa_full fa_full_animation"></i>
+                <i class="fas fa-heart fa_full fa_full_animation" aria-label="icone d'un coeur, non cliquable"></i>
             </div>
             <div id="rate">${this._data.price}</div>
         `;

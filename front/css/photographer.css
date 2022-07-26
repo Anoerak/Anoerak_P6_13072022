@@ -14,7 +14,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 60%;
+    height: 90%;
+    width: 30%;
 }
 .photograph-header .photographer_info>* {
     margin: 0;
@@ -126,7 +127,8 @@
     cursor: pointer;
 }
 
-#main #gallery .sort_bar label ul:hover > .hidden {
+#main #gallery .sort_bar label ul:hover > .hidden, #main #gallery .sort_bar label ul.focus > .hidden, 
+#main #gallery .sort_bar label ul:focus-visible > .hidden, #main #gallery .sort_bar label ul:focus-visible > .hidden {
     display: block;
 }
 
@@ -221,8 +223,10 @@
     line-height: 31px;
 }
 
-#main #gallery .medias_gallery .card .card_info span p {
+#main #gallery .medias_gallery .card .card_info span p, #main #gallery .floating_bar #like_total #like_amount {
     margin: 0;
+    color: #000000;
+    font-size: 20px;
 }
 
 #main #gallery .medias_gallery .card .card_info span .fa_custom {
@@ -358,7 +362,7 @@
     cursor: pointer;
 }
 
-#contact_modal .modal header .message h2 {
+#contact_modal .modal header .message h4 {
     font-size: 64px;
     font-weight: 400;
     line-height: 83px;
