@@ -1,0 +1,126 @@
+@media only screen and (max-width: 1100px) {
+    body main .photograph-header {
+        margin: 0 50px;
+    }
+    body main #gallery .medias_gallery {
+        justify-content: space-between;
+    }
+    body main #gallery .medias_gallery .card {
+        max-width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    body main #gallery .medias_gallery .card .card_info {
+        width: 100%;
+    }
+    body main #gallery .medias_gallery .card video,     body #main #gallery .medias_gallery .card img {
+        max-width: 95%;
+    }
+    body #contact_modal .modal {
+        margin: auto;
+        width: 60%;
+        height: 100%;
+        padding: 0 30px 500px 30px;
+    }
+    body #contact_modal .modal header {
+        width: 100%;
+        height: auto;
+        margin: 0 0 2rem 0
+    }
+    body #contact_modal .modal header .message h4{
+        font-size: 35px;
+    }
+    body #contact_modal .modal header .message .artist_name {
+        font-size: 20px;
+    }
+    body #contact_modal .modal form input, body #contact_modal .modal form textarea {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    body main .photograph-header {
+        margin: 0;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    body main .photograph-header .photographer_info {
+        width: 100%;
+        align-items: center;
+    }
+    body main .photograph-header .photographer_photo_contact {
+        height: 25rem;
+        width: 100%;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    body #main #gallery {
+        margin: 0px;
+    }
+    body #main #gallery .sort_bar {
+        margin: 1rem;
+        max-width: 90%;
+    }
+    body #main #gallery nav label #filter {
+        width: 7em;
+        margin : -1.5em 0 0 6em
+    }
+    body #main #gallery .medias_gallery {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    body #main #gallery .medias_gallery .card {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    body #main #gallery .medias_gallery .card video,     body #main #gallery .medias_gallery .card img {
+        max-width: 90%;
+    }
+    body #main #gallery .medias_gallery .card .card_info {
+        width: 100%
+    }
+    body #main #gallery .floating_bar {
+        right: 0;
+        width: 70%;
+    }
+    body #contact_modal .modal {
+        margin: 1rem 0;
+        width: 85%;
+        height: 90%;
+        padding: 0 30px 90px 30px;
+    }
+    body #contact_modal .modal header {
+        width: 110%;
+        height: auto;
+        margin: 0 0 2rem 0
+    }
+    body #contact_modal .modal header .message h4{
+        font-size: 35px;
+    }
+    body #contact_modal .modal header .message .artist_name {
+        font-size: 20px;
+    }
+    body #contact_modal .modal form input, body #contact_modal .modal form textarea {
+        font-size: 20px;
+    }
+    body #lightbox_gallery .modal-content{
+        max-width: 65%;
+        height: 55%;
+    }
+    body #lightbox_gallery .modal-content .mySlides {
+        width: 100%;
+        height: 130%;
+    }
+    body #lightbox_gallery .modal-content a.nex.prevt {
+        margin-top: -220px;
+    }
+    body #lightbox_gallery .modal-content .caption-container #caption {
+        margin-top: -4rem;
+        margin-left: -1rem;
+    }
+}
