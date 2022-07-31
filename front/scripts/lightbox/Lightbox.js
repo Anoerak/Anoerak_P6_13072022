@@ -72,12 +72,22 @@ class Lightbox {
         prev.addEventListener("click", () => {
             this.showSlides(this._slideIndex += -1);
         });
+        window.addEventListener("keyup", (e) => {
+            if (e.keyCode === 37) {
+                this.showSlides(this._slideIndex += -1);
+            }
+        });
     }
 
     nextslide() {
         const next = document.querySelector(".next");
         next.addEventListener("click", () => {
             this.showSlides(this._slideIndex += 1);
+        });
+        window.addEventListener("keyup", (e) => {
+            if (e.keyCode === 39) {
+                this.showSlides(this._slideIndex += 1);
+            }
         });
     }
         

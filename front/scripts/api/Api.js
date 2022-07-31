@@ -17,7 +17,7 @@ class Api {
                 if (filter === "artistsOnly") {
                     for (let i = 0; i < data.photographers.length; i++) {
                         this._photographers.push(data.photographers[i]);
-                    };
+                    }
                     return this._photographers;
                 } else if (filter === "artistWithMedias") {
                     const artist = data.photographers.find(photographer => photographer.id == id);
@@ -25,8 +25,8 @@ class Api {
                     for (let i = 0; i < data.media.length; i++) {
                         if (data.media[i].photographerId == id) {
                             this._datas.media.push(data.media[i]);
-                        };
-                    };
+                        }
+                    }
                     return this._datas
                 }
             })

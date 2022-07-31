@@ -8,6 +8,6 @@ class LightboxFactory {
             const lightboxVideo = new LightboxTemplate();
                 lightboxVideo.displayLightboxVideo(data, media, parent);
             return lightboxVideo;
-        };
+        }
     }
 }

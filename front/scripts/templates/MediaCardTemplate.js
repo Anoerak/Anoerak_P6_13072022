@@ -30,7 +30,7 @@ class MediaCardTemplate {
                 }
             }
         );
-    };
+    }
 
     // Create the Card on the DOM for Pictures
     loadImages (media, parent, index) {

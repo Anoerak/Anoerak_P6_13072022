@@ -29,7 +29,7 @@ class PhotographerPage {
     async  init() {
         const photographer = await this.getPhotographerDatas();
         this.displayData(photographer);
-    };
+    }
 }
 
 const photographerPage = new PhotographerPage();

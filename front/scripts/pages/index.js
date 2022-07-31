@@ -27,13 +27,13 @@ class Index {
                 window.location.href = "photographer.html?id="+id;
             });
         }
-    };
+    }
 
     // Initialize the Page
     async init() {
         const photographers = await this.getPhotographers();
         this.displayData(photographers);
-    };
+    }
 
 }
 
