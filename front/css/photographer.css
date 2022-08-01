@@ -140,6 +140,16 @@
     width: 100%;
     font-size: 1.01em;
 }
+#main #gallery .sort_bar label .sorting_info {
+    display: none;
+}
+
+#main #gallery .sort_bar label li:focus + .sorting_info {
+    display: block;
+    position: absolute;
+    right: -36rem;
+    margin-top: -3rem;
+}
 
 #main #gallery .sort_bar label li:hover {
     background-color: #D3573C;

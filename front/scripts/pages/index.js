@@ -26,6 +26,12 @@ class Index {
                 const id = this.getAttribute("id");
                 window.location.href = "photographer.html?id="+id;
             });
+            photographerPageLink[i].addEventListener("keydown", function(e) {
+                if (e.keyCode === 13) {
+                    const id = this.getAttribute("id");
+                    window.location.href = "photographer.html?id="+id;
+                }
+            });
         }
     }
 

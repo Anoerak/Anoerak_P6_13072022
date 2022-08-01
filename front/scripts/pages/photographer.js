@@ -23,6 +23,12 @@ class PhotographerPage {
 
         const contactForm = new ContactForm(artistInfoAndCollection);
         contactForm.render();
+
+        window.addEventListener("keydown", function() {
+            if (event.key === "ArrowDown") {
+                Element.focusNextElement(document.activeElement);
+            }
+        });
     }
 
     // Displays the Datas on the DOM

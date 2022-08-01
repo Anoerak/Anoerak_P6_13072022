@@ -8,6 +8,7 @@ class PhotographersCardsTemplate {
         article.setAttribute("id", this._photographer.id);
         article.setAttribute("class", "photographer_page_link");
         article.setAttribute("aria-label", "lien vers la page de "+ this._photographer.name);
+        article.setAttribute("tabindex", "0");
 
         article.innerHTML = `
             <img src="${this._photographer.picture}" alt="${this._photographer.name}" class="photographer_picture">

@@ -16,13 +16,19 @@ class ContactForm {
             this.$modalWrapper.ariaHidden = "true";
             this.$headerHtmlWrapper.ariaHidden = "false";
             this.$mainHtmlWrapper.ariaHidden = "false";
+            document.querySelectorAll('[tabindex]').forEach(element => {
+                element.setAttribute("tabindex", "0");
+            });    
         });
-        this.$closeModalWrapper.addEventListener("keyup", (e) => {
+        window.addEventListener("keydown", (e) => {
             if (e.keyCode === 27) {
                 this.$modalWrapper.style.display = "none";
                 this.$modalWrapper.ariaHidden = "true";
                 this.$headerHtmlWrapper.ariaHidden = "false";
-                this.$mainHtmlWrapper.ariaHidden = "false";                
+                this.$mainHtmlWrapper.ariaHidden = "false";
+                document.querySelectorAll('[tabindex]').forEach(element => {
+                    element.setAttribute("tabindex", "0");
+                });        
             }
         });
     }
@@ -49,10 +55,14 @@ class ContactForm {
                 this.closeModal();
                 return false;
             });
+
     }   
 
     render() {
         this.$modalCaller.addEventListener("click", () => {
+            document.querySelectorAll('[tabindex]').forEach(element => {
+                element.setAttribute("tabindex", "-1");
+            });
             this.contactFormTemplate.createForm();
             this.$mainHtmlWrapper.ariaHidden = "true";
             this.$headerHtmlWrapper.ariaHidden = "true";

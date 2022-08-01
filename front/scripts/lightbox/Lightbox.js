@@ -36,6 +36,21 @@ class Lightbox {
                 this.$lightboxWrapper.style.display = "block";
                 this.closeLightbox();
             });
+            card.addEventListener("keyup", (e) => {
+                if (e.keyCode === 13) {
+                    const imgId = parseInt(card.getAttribute("id"));
+                    displayLightboxHtml.displayHTML();
+                    this.displayMedias(this._collection);
+                    this.currentSlide(imgId)
+                    this.previousSlide();
+                    this.nextSlide();
+                    this.$headerWrapper.ariaHidden = "true";
+                    this.$mainHtmlWrapper.ariaHidden = "true";
+                    this.$lightboxWrapper.ariaHidden = "false";
+                    this.$lightboxWrapper.style.display = "block";
+                    this.closeLightbox();
+                }
+            });
         });
     }
 
