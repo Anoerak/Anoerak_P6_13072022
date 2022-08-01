@@ -29,7 +29,7 @@ class Lightbox {
                 this.displayMedias(this._collection);
                 this.currentSlide(imgId)
                 this.previousSlide();
-                this.nextslide();
+                this.nextSlide();
                 this.$headerWrapper.ariaHidden = "true";
                 this.$mainHtmlWrapper.ariaHidden = "true";
                 this.$lightboxWrapper.ariaHidden = "false";
@@ -79,7 +79,7 @@ class Lightbox {
         });
     }
 
-    nextslide() {
+    nextSlide() {
         const next = document.querySelector(".next");
         next.addEventListener("click", () => {
             this.showSlides(this._slideIndex += 1);

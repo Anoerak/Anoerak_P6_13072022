@@ -36,7 +36,6 @@ class ArtistPageTemplate {
             </label>
         `;
         let filter = orderBar.querySelectorAll(".hidden");
-        console.log(filter);
         window.addEventListener("keypress", function(e) {
             if (e.key === "m") {
                 filter.forEach(element => {

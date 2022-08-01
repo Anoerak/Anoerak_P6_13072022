@@ -17,7 +17,7 @@ class ContactForm {
             this.$headerHtmlWrapper.ariaHidden = "false";
             this.$mainHtmlWrapper.ariaHidden = "false";
         });
-        window.addEventListener("keyup", (e) => {
+        this.$closeModalWrapper.addEventListener("keyup", (e) => {
             if (e.keyCode === 27) {
                 this.$modalWrapper.style.display = "none";
                 this.$modalWrapper.ariaHidden = "true";
@@ -48,9 +48,8 @@ class ContactForm {
                 console.log(data);
                 this.closeModal();
                 return false;
-            }
-        );
-    }
+            });
+    }   
 
     render() {
         this.$modalCaller.addEventListener("click", () => {

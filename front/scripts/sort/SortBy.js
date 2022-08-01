@@ -31,11 +31,28 @@ class SortBy {
         sortByPopularity.addEventListener("click", () => {
             this.displaySortedGallery(this.sortByPopularity());
         });
+        sortByPopularity.addEventListener("keyup", (e) => {
+            if (e.keyCode === 13) {
+                this.displaySortedGallery(this.sortByPopularity())
+            }
+        });
+
         sortByDate.addEventListener("click", () => {
             this.displaySortedGallery(this.sortByDate());
         });
+        sortByDate.addEventListener("keyup", (e) => {
+            if (e.keyCode === 13) {
+                this.displaySortedGallery(this.sortByDate())
+            }
+        });
+        
         sortByName.addEventListener("click", () => {
             this.displaySortedGallery(this.sortByName());
+        });
+        sortByName.addEventListener("keyup", (e) => {
+            if (e.keyCode === 13) {
+                this.displaySortedGallery(this.sortByName())
+            }
         });
 
         return this._collection;

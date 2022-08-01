@@ -3,12 +3,12 @@ class LikesSubject {
         this._likeObservers = [];
     }
 
-    like(likeObserber) {
-        this._likeObservers.push(likeObserber);
+    like(likeObserver) {
+        this._likeObservers.push(likeObserver);
     }
 
-    unlike(likeObserber) {
-        this.likeObserbers = this.likeObserbers.filter(observer => observer !== likeObserber);
+    unlike(likeObserver) {
+        this.likeObservers = this.likeObservers.filter(observer => observer !== likeObserver);
     }
     
     click(action) {
